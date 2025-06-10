@@ -1,0 +1,475 @@
+/* Variáveis de Cores */
+:root {
+    --primary-color: #3498db; /* Azul */
+    --secondary-color: #2ecc71; /* Verde */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --text-color: #555;
+    --white: #ffffff;
+    --gray-light: #ccc;
+    --gray-medium: #888;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: darken(var(--primary-color), 10%); /* Ou uma cor mais escura definida */
+    background: #2980b9; /* Exemplo de cor mais escura */
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: darken(var(--secondary-color), 10%); /* Ou uma cor mais escura definida */
+    background: #27ae60; /* Exemplo de cor mais escura */
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    color: var(--dark-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--gray-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; /* Ajuste conforme sua logo */
+}
+
+.header .main-nav ul {
+    display: flex;
+}
+
+.header .main-nav ul li {
+    margin-left: 25px;
+}
+
+.header .main-nav ul li a {
+    color: var(--dark-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header .main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: url('Public/PagMain/Img/Headler/SulluzHeadler.jpeg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--white);
+}
+
+/* Seção Sobre Nós */
+.about-us {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.about-us .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-us .about-content {
+    flex: 1;
+}
+
+.about-us .about-content h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-us .about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-us .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Serviços */
+.services {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.services .service-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.services .service-item:hover {
+    transform: translateY(-10px);
+}
+
+.services .service-item img {
+    width: 80px; /* Ajuste o tamanho do ícone/imagem */
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.services .service-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: var(--dark-color);
+}
+
+/* Seção Portfólio */
+.portfolio {
+    padding: 80px 0;
+    background: var(--light-color);
+    text-align: center;
+}
+
+.portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.portfolio .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-item img {
+    width: 100%;
+    height: 250px; /* Altura fixa para as imagens do portfólio */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio .portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--primary-color), 0.8); /* Overlay com cor primária */
+    background: rgba(52, 152, 219, 0.8); /* Exemplo de rgba */
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio .portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio .portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio .portfolio-item .overlay h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.portfolio .portfolio-item .overlay p {
+    color: var(--white);
+    font-size: 0.9em;
+}
+
+/* Seção Depoimentos */
+.testimonials {
+    padding: 80px 0;
+    text-align: center;
+    background: var(--white);
+}
+
+.testimonials .testimonial-card {
+    max-width: 800px;
+    margin: 50px auto 0;
+    background: var(--light-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+
+.testimonials .testimonial-card p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.testimonials .testimonial-card h4 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.testimonials .testimonial-card span {
+    font-size: 0.9em;
+    color: var(--gray-medium);
+}
+
+/* Seção Contato */
+.contact {
+    padding: 80px 0;
+    background: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.contact h2, .contact p {
+    color: var(--white);
+}
+
+.contact .contact-form {
+    max-width: 600px;
+    margin: 40px auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact .contact-form input,
+.contact .contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark-color);
+}
+
+.contact .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact .contact-form input::placeholder,
+.contact .contact-form textarea::placeholder {
+    color: var(--gray-medium);
+}
+
+.contact .contact-form .btn {
+    width: 100%;
+    margin-top: 0;
+    background: var(--primary-color);
+}
+
+.contact .contact-info {
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+.contact .contact-info p {
+    margin-bottom: 10px;
+}
+
+
+/* Footer */
+.footer {
+    background: #222;
+    color: var(--gray-light);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+
+/* Responsividade Básica (Ajuste conforme necessidade) */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header .main-nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .about-us .container {
+        flex-direction: column;
+    }
+
+    .about-us .about-content,
+    .about-us .about-image {
+        text-align: center;
+    }
+
+    .about-us .about-content h2 {
+        text-align: center;
+    }
+
+    .services .service-grid,
+    .portfolio .portfolio-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    .contact .contact-form {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}
