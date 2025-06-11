@@ -126,7 +126,7 @@ ul {
 
 /* Hero Section */
 .hero {
-    background: url('Public/PagMain/Img/Headler/SulluzHeadler.jpeg') no-repeat center center/cover;
+    background: url('Public/PagMain/Img/Headler/banner.jpg') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
     padding: 100px 0;
